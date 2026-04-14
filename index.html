@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ВКР — Кластерный анализ школ России</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f6fa; color: #222; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .container { max-width: 560px; width: 100%; padding: 40px 24px; text-align: center; }
+  h1 { font-size: 22px; font-weight: 700; color: #1a237e; margin-bottom: 8px; }
+  .subtitle { font-size: 14px; color: #666; margin-bottom: 36px; line-height: 1.6; }
+  .cards { display: flex; flex-direction: column; gap: 16px; }
+  .card {
+    display: flex; align-items: center; gap: 18px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    text-decoration: none; color: inherit;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    border: 2px solid transparent;
+    transition: border-color .15s, box-shadow .15s;
+    text-align: left;
+  }
+  .card:hover { border-color: var(--c); box-shadow: 0 4px 20px rgba(0,0,0,.14); }
+  .card-icon { font-size: 34px; flex-shrink: 0; }
+  .card-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .card-desc { font-size: 13px; color: #666; line-height: 1.5; }
+  .badge { display: inline-block; background: #e8f4fd; color: #1a237e; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-top: 6px; }
+  .footer { font-size: 11px; color: #aaa; margin-top: 32px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Кластерный анализ школ России</h1>
+  <p class="subtitle">Выпускная квалификационная работа<br>23 581 школа · 9 кластеров · 7 признаков</p>
+
+  <div class="cards">
+    <a href="map_clusters.html" class="card" style="--c:#1a237e">
+      <div class="card-icon">🗺️</div>
+      <div>
+        <div class="card-title">Интерактивная карта кластеров</div>
+        <div class="card-desc">Все школы России на карте, разбитые на 9 территориально-экономических кластеров. Фильтрация по кластерам, попап с данными школы.</div>
+        <span class="badge">23 581 школа</span>
+      </div>
+    </a>
+
+    <a href="cluster_analysis.html" class="card" style="--c:#1a237e">
+      <div class="card-icon">📊</div>
+      <div>
+        <div class="card-title">Анализ кластеров</div>
+        <div class="card-desc">Профили каждого кластера: отклонения признаков от среднего, распределение по округам, топ регионов, сравнительная тепловая карта.</div>
+        <span class="badge">9 кластеров · 7 признаков</span>
+      </div>
+    </a>
+
+    <a href="map_heatmap.html" class="card" style="--c:#1a237e">
+      <div class="card-icon">🔥</div>
+      <div>
+        <div class="card-title">Тепловая карта транспортной активности</div>
+        <div class="card-desc">GPS-плотность вокруг школ — транспортная доступность по всей стране.</div>
+        <span class="badge">GPS-данные 2022</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="footer">K-means · scikit-learn · Folium · OpenStreetMap · GADM 4.1 · Росстат 2021</div>
+</div>
+</body>
+</html>
